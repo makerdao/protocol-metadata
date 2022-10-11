@@ -406,7 +406,7 @@ parameters:
     technical-docs: https://mips.makerdao.com/mips/details/MIP50
     governance-docs: https://manual.makerdao.com/module-index/module-dai-direct-deposit
 
-  MCD_FLASH.max
+  MCD_FLASH.max:
     longname: Flash Loan Debt Ceiling
     shortname: Flash Loan Debt Ceiling
     contract: MCD_FLASH
@@ -417,7 +417,7 @@ parameters:
     technical-docs: https://mips.makerdao.com/mips/details/MIP25
     governance-docs: https://manual.makerdao.com/module-index/module-flash-mint-module
 
-  MCD_ESM.min
+  MCD_ESM.min:
     longname: Minimum Threshold
     shortname: Minimum Threshold
     contract: MCD_ESM
