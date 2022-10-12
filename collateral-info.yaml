@@ -635,9 +635,16 @@ ilks:
     id: RWA005-A
     shortname: FFT1-DROP
     longname: Fortunafi DROP
+  RWA007-A:
+    <<: *BASE
+    <<: *RWA007
+    <<: *STATUS_ACTIVE
+    id: RWA007-A
+    shortname: Monetalis Clydesdale
+    longname: Monetalis Clydesdale
   RWA008-A:
     <<: *BASE
-    <<: *RWA009
+    <<: *RWA008
     <<: *STATUS_ACTIVE
     id: RWA008-A
     shortname: Societe Generale
