@@ -29,7 +29,7 @@ parameters:
     desc: The interest rate paid to DAI holders who have deposited DAI into the Dai Savings Rate contract.
     alias: ['DSR']
     scope: system
-    technical-docs: https://docs.makerdao.com/mcd-developer-guides/developer-guides-and-tutorials#dai-savings-rate-dsr
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/rates-module/pot-detailed-documentation
     governance-docs: https://manual.makerdao.com/parameter-index/core/param-dai-savings-rate
 
   MCD_DOG.Hole: 
