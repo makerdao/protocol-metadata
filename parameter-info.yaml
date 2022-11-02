@@ -54,8 +54,8 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/vat-detailed-documentation
     governance-docs: https://manual.makerdao.com/parameter-index/core/param-global-debt-ceiling
 
-  MCD_JUG.ilks.duty:
-    longname: Stability Fee
+  MCD_JUG.ilks[$ILK].duty:
+    longname: Stability Fees
     shortname: Stability Fee
     contract: MCD_JUG
     parameter: duty
@@ -65,7 +65,7 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/rates-module/jug-detailed-documentation
     governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-stability-fee
 
-  MCD_VAT.ilks.line:
+  MCD_VAT.ilks[$ILK].line:
     longname: Debt Ceiling
     shortname: Line
     contract: MCD_VAT
@@ -76,7 +76,7 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/vat-detailed-documentation
     governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-debt-ceiling
 
-  MCD_SPOT.ilks.mat:
+  MCD_SPOT.ilks[$ILK].mat:
     longname: Liquidation Ratio
     shortname: Liquidation Ratio
     contract: MCD_SPOT
@@ -87,7 +87,7 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/spot-detailed-documentation
     governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-liquidation-ratio
 
-  MCD_DOG.ilks.chop:
+  MCD_DOG.ilks[$ILK].chop:
     longname: Liquidation Penalty
     shortname: Liquidation Penalty
     contract: MCD_DOG
@@ -98,7 +98,7 @@ parameters:
     technical-docs: 
     governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-liquidation-penalty
 
-  MCD_VAT.ilks.dust:
+  MCD_VAT.ilks[$ILK].dust:
     longname: Debt Floor
     shortname: Dust
     contract: MCD_VAT
@@ -109,7 +109,7 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/vat-detailed-documentation
     governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-debt-floor
 
-  MIP21_LIQUIDATION_ORACLE.ilks.doc:
+  MIP21_LIQUIDATION_ORACLE.ilks[$ILK].doc:
     longname: RWA Agreement
     shortname: RWA Agreement
     contract: MIP21_LIQUIDATION_ORACLE
@@ -120,10 +120,10 @@ parameters:
     technical-docs: https://mips.makerdao.com/mips/details/MIP21
     governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-rwa-agreement
 
-  MCD_CLIP_ilk.calc:
+  MCD_CLIP_$ILK.calc:
     longname: Auction Price Function
     shortname: Auction Price Function
-    contract: MCD_CLIP_ilk
+    contract: MCD_CLIP_$ILK
     parameter: calc
     desc: The mathematical function that determines how the collateral price changes over time during a collateral auction.
     alias: ['Price Curve']
@@ -131,10 +131,10 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
     governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-auction-price-function
     
-  MCD_CLIP_ilk.buf:
+  MCD_CLIP_$ILK.buf:
     longname: Auction Price Multiplier
     shortname: Auction Price Multiplier
-    contract: MCD_CLIP_ilk
+    contract: MCD_CLIP_$ILK
     parameter: buf
     desc: A multiplier applied to the starting price of a collateral auction.
     alias: []
@@ -142,7 +142,7 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
     governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-auction-price-multiplier
 
-  MCD_DOG.ilks.hole:
+  MCD_DOG.ilks[$ILK].hole:
     longname: Local Liquidation Limit
     shortname: Local Liquidation Limit
     contract: MCD_DOG
@@ -153,10 +153,10 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
     governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-local-liquidation-limit
 
-  MCD_CLIP_ilk.cusp:
+  MCD_CLIP_$ILK.cusp:
     longname: Max Auction Drawdown
     shortname: Max Auction Drawdown
-    contract: MCD_CLIP_ilk
+    contract: MCD_CLIP_$ILK
     parameter: cusp
     desc: The maximum percentage drop in collateral auction price during a collateral auction before the auction is reset. 
     alias: []
@@ -164,10 +164,10 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
     governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-max-auction-drawdown
 
-  MCD_CLIP_ilk.tail:
+  MCD_CLIP_$ILK.tail:
     longname: Max Auction Duration
     shortname: Max Auction Duration
-    contract: MCD_CLIP_ilk
+    contract: MCD_CLIP_$ILK
     parameter: tail
     desc: The maximum time that can elapse before an auction is reset for this vault type.
     alias: []
@@ -175,7 +175,7 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
     governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-max-auction-duration
 
-  CLIPPER_MOM.clipper.tolerance:
+  CLIPPER_MOM.tolerance[$CLIPPER]:
     longname: Breaker Price Tolerance
     shortname: Breaker Price Tolerance
     contract: CLIPPER_MOM
@@ -186,10 +186,10 @@ parameters:
     technical-docs: 
     governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-breaker-price-tolerance#description
 
-  MCD_CLIP_ilk.chip:
+  MCD_CLIP_$ILK.chip:
     longname: Proportional Kick Incentive
     shortname: Proportional Kick Incentive
-    contract: MCD_CLIP_ilk
+    contract: MCD_CLIP_$ILK
     parameter: chip
     desc: The proportion of debt in DAI paid to the keeper triggering a collateral auction for a given vault of this type.
     alias: []
@@ -197,10 +197,10 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
     governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-proportional-kick-incentive
 
-  MCD_CLIP_ilk.tip:
+  MCD_CLIP_$ILK.tip:
     longname: Flat Kick Incentive
     shortname: Flat Kick Incentive
-    contract: MCD_CLIP_ilk
+    contract: MCD_CLIP_$ILK
     parameter: tip
     desc: The amount of DAI paid to the keeper triggering a collateral auction for a given vault of this type.
     alias: []
@@ -340,10 +340,10 @@ parameters:
     technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flop-detailed-documentation
     governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-lot-size-increase
 
-  MCD_PSM_ilk.tin:
+  MCD_PSM_$ILK.tin:
     longname: Fee In
     shortname: Fee In
-    contract: MCD_PSM_ilk
+    contract: MCD_PSM_$ILK
     parameter: tin
     desc: The percentage fee applied when trading the collateral asset into the PSM in exchange for DAI.
     alias: ['Toll In']
@@ -351,10 +351,10 @@ parameters:
     technical-docs: https://mips.makerdao.com/mips/details/MIP29
     governance-docs: https://manual.makerdao.com/module-index/module-psm
 
-  MCD_PSM_ilk.tout:
+  MCD_PSM_$ILK.tout:
     longname: Fee Out
     shortname: Fee Out
-    contract: MCD_PSM_ilk
+    contract: MCD_PSM_$ILK
     parameter: tin
     desc: The percentage fee applied when trading DAI into the PSM in exchange for the collateral asset.
     alias: ['Toll Out']
@@ -362,7 +362,7 @@ parameters:
     technical-docs: https://mips.makerdao.com/mips/details/MIP29
     governance-docs: https://manual.makerdao.com/module-index/module-psm
   
-  MCD_IAM_AUTO_LINE.ilks.line:
+  MCD_IAM_AUTO_LINE.ilks[$ILK].line:
     longname: Maximum Debt Ceiling
     shortname: Maximum Debt Ceiling
     contract: MCD_IAM_AUTO_LINE
@@ -373,7 +373,7 @@ parameters:
     technical-docs: https://mips.makerdao.com/mips/details/MIP27
     governance-docs: https://manual.makerdao.com/module-index/module-dciam
 
-  MCD_IAM_AUTO_LINE.ilks.gap:
+  MCD_IAM_AUTO_LINE.ilks[$ILK].gap:
     longname: Target Available Debt
     shortname: Target Available Debt
     contract: MCD_IAM_AUTO_LINE
@@ -384,7 +384,7 @@ parameters:
     technical-docs: https://mips.makerdao.com/mips/details/MIP27
     governance-docs: https://manual.makerdao.com/module-index/module-dciam
 
-  MCD_IAM_AUTO_LINE.ilks.ttl:
+  MCD_IAM_AUTO_LINE.ilks[$ILK].ttl:
     longname: Ceiling Increase Cooldown
     shortname: Ceiling Increase Cooldown
     contract: MCD_IAM_AUTO_LINE
