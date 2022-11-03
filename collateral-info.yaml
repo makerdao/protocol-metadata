@@ -227,7 +227,7 @@ collateral-defs:
     collateral-symbol: NS-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/new-silver
     collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: By the second
+    collateral-stability-fee-payment-frequency: Per second
     collateral-geographical-exposure: US
 
   RWA003: &RWA003
@@ -238,7 +238,7 @@ collateral-defs:
     collateral-symbol: CF-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/consolfreight
     collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: By the second
+    collateral-stability-fee-payment-frequency: Per second
     collateral-geographical-exposure: US
 
   RWA004: &RWA004
@@ -249,7 +249,7 @@ collateral-defs:
     collateral-symbol: HTC-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/harbour-trade
     collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: By the second
+    collateral-stability-fee-payment-frequency: Per second
     collateral-geographical-exposure: US
 
   RWA005: &RWA005
@@ -260,7 +260,7 @@ collateral-defs:
     collateral-symbol: FFT1-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/fortunafi
     collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: By the second
+    collateral-stability-fee-payment-frequency: Per second
     collateral-geographical-exposure: US
 
   RWA007: &RWA007
