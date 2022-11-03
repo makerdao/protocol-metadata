@@ -216,8 +216,7 @@ collateral-defs:
     collateral-symbol: RWA001
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/6s
     collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: By the second
-    collateral-documentation: https://ipfs.io/ipfs/QmdmAUTU3sd9VkdfTZNQM6krc9jsKgF2pz7W1qvvfJo1xk
+    collateral-stability-fee-payment-frequency: Per second
     collateral-geographical-exposure: US
 
   RWA002: &RWA002
@@ -229,7 +228,6 @@ collateral-defs:
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/new-silver
     collateral-stability-fee-type: Fixed
     collateral-stability-fee-payment-frequency: By the second
-    collateral-documentation: https://ipfs.io/ipfs/QmdfuQSLmNFHoxvMjXvv8qbJ2NWprrsvp5L3rGr3JHw18E
     collateral-geographical-exposure: US
 
   RWA003: &RWA003
@@ -241,7 +239,6 @@ collateral-defs:
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/consolfreight
     collateral-stability-fee-type: Fixed
     collateral-stability-fee-payment-frequency: By the second
-    collateral-documentation: https://ipfs.io/ipfs/QmQMNfSbGS8qkJbatQgxMUsz27G8YELWgtXeLs8uFCZoY8
     collateral-geographical-exposure: US
 
   RWA004: &RWA004
@@ -253,7 +250,6 @@ collateral-defs:
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/harbour-trade
     collateral-stability-fee-type: Fixed
     collateral-stability-fee-payment-frequency: By the second
-    collateral-documentation: https://ipfs.io/ipfs/QmYR2PXwLpdXS8Vp1yS39SPFT1XhmgbsK6XvZ9ApRpNV8M
     collateral-geographical-exposure: US
 
   RWA005: &RWA005
@@ -265,7 +261,6 @@ collateral-defs:
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/fortunafi
     collateral-stability-fee-type: Fixed
     collateral-stability-fee-payment-frequency: By the second
-    collateral-documentation: https://ipfs.io/ipfs/QmbgDoPn6UcfSDENDqHLgatMFoqXikC8E8it9WaZXyLXmc
     collateral-geographical-exposure: US
 
   RWA007: &RWA007
@@ -276,7 +271,6 @@ collateral-defs:
     collateral-symbol: RWA007
     collateral-stability-fee-type: Variable
     collateral-stability-fee-payment-frequency: One-time
-    collateral-documentation: https://ipfs.io/ipfs/QmRLwB7Ty3ywSzq17GdDdwHvsZGwBg79oUTpSTJGtodToY
     collateral-geographical-exposure: US
     vault-closure: Upon governance request
 
@@ -286,9 +280,8 @@ collateral-defs:
     collateral-longname: Societe Generale
     collateral-shortname: Societe Generale
     collateral-symbol: RWA008
-    stability-fee-type: Fixed
-    stability-fee-payment-frequency: By the second
-    collateral-documentation: https://ipfs.io/ipfs/QmdfzY6p5EpkYMN8wcomF2a1GsJbhkPiRQVRYSPfS4NZtB
+    collateral-stability-fee-type: Fixed
+    collateral-stability-fee-payment-frequency: Per second
     collateral-geographical-exposure: FR
     vault-closure: Latest 05/14/2025 
 
@@ -301,7 +294,6 @@ collateral-defs:
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/hvbank
     collateral-stability-fee-type: Variable
     collateral-stability-fee-payment-frequency: Monthly
-    collateral-documentation: https://ipfs.io/ipfs/QmQx3bMtjncka2jUsGwKu7ButuPJFn9yDEEvpg9xZ71ECh
     collateral-geographical-exposure: US
     vault-closure: Upon governance request
 
