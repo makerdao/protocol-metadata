@@ -215,9 +215,6 @@ collateral-defs:
     collateral-shortname: 6s Capital
     collateral-symbol: RWA001
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/6s
-    collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: Per second
-    collateral-geographical-exposure: US
 
   RWA002: &RWA002
     <<: *CFG-DROP
@@ -226,9 +223,6 @@ collateral-defs:
     collateral-shortname: New Silver DROP
     collateral-symbol: NS-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/new-silver
-    collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: Per second
-    collateral-geographical-exposure: US
 
   RWA003: &RWA003
     <<: *CFG-DROP
@@ -237,9 +231,6 @@ collateral-defs:
     collateral-shortname: ConsolFreight DROP
     collateral-symbol: CF-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/consolfreight
-    collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: Per second
-    collateral-geographical-exposure: US
 
   RWA004: &RWA004
     <<: *CFG-DROP
@@ -248,9 +239,6 @@ collateral-defs:
     collateral-shortname: Harbour Trade Credit DROP
     collateral-symbol: HTC-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/harbour-trade
-    collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: Per second
-    collateral-geographical-exposure: US
 
   RWA005: &RWA005
     <<: *CFG-DROP
@@ -259,9 +247,6 @@ collateral-defs:
     collateral-shortname: FortunaFi DROP
     collateral-symbol: FFT1-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/fortunafi
-    collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: Per second
-    collateral-geographical-exposure: US
 
   RWA007: &RWA007
     <<: *RWA-CUSTOM
@@ -269,10 +254,6 @@ collateral-defs:
     collateral-longname: Monetalis Clydesdale
     collateral-shortname: Monetalis Clydesdale
     collateral-symbol: RWA007
-    collateral-stability-fee-type: Variable
-    collateral-stability-fee-payment-frequency: One-time
-    collateral-geographical-exposure: US
-    vault-closure: Upon governance request
 
   RWA008: &RWA008
     <<: *RWA-CUSTOM
@@ -280,10 +261,6 @@ collateral-defs:
     collateral-longname: Societe Generale
     collateral-shortname: Societe Generale
     collateral-symbol: RWA008
-    collateral-stability-fee-type: Fixed
-    collateral-stability-fee-payment-frequency: Per second
-    collateral-geographical-exposure: FR
-    vault-closure: Latest 05/14/2025 
 
   RWA009: &RWA009
     <<: *RWA-CUSTOM
@@ -292,10 +269,6 @@ collateral-defs:
     collateral-shortname: H. V. Bank
     collateral-symbol: RWA009
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/hvbank
-    collateral-stability-fee-type: Variable
-    collateral-stability-fee-payment-frequency: Monthly
-    collateral-geographical-exposure: US
-    vault-closure: Upon governance request
 
 status-defs:
   Deprecated: &STATUS_DEPRECATED
@@ -634,6 +607,9 @@ ilks:
     <<: *STATUS_ACTIVE
     id: RWA001-A
     shortname: 6s Capital
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US
   RWA002-A:
     <<: *BASE
     <<: *RWA002
@@ -641,6 +617,9 @@ ilks:
     id: RWA002-A
     shortname: NS-DROP
     longname: New Silver DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US
   RWA003-A:
     <<: *BASE
     <<: *RWA003
@@ -648,6 +627,9 @@ ilks:
     id: RWA003-A
     shortname: CF-DROP
     longname: ConsolFreight DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US
   RWA004-A:
     <<: *BASE
     <<: *RWA004
@@ -655,6 +637,9 @@ ilks:
     id: RWA004-A
     shortname: HTC-DROP
     longname: Harbor Trade Credit DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US
   RWA005-A:
     <<: *BASE
     <<: *RWA005
@@ -662,6 +647,9 @@ ilks:
     id: RWA005-A
     shortname: FFT1-DROP
     longname: Fortunafi DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US
   RWA007-A:
     <<: *BASE
     <<: *RWA007
@@ -669,6 +657,10 @@ ilks:
     id: RWA007-A
     shortname: Monetalis Clydesdale
     longname: Monetalis Clydesdale
+    rwa-stability-fee-type: Variable
+    rwa-stability-fee-payment-frequency: One-time
+    rwa-geographical-exposure: US
+    rwa-vault-closure: Upon governance request
   RWA008-A:
     <<: *BASE
     <<: *RWA008
@@ -676,6 +668,10 @@ ilks:
     id: RWA008-A
     shortname: Societe Generale
     longname: Societe Generale
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: FR
+    rwa-vault-closure: Latest 2025-05-14
   RWA009-A:
     <<: *BASE
     <<: *RWA009
@@ -683,6 +679,10 @@ ilks:
     id: RWA009-A
     shortname: H. V. Bank
     longname: Huntingdon Valley Bank
+    rwa-stability-fee-type: Variable
+    rwa-stability-fee-payment-frequency: Monthly
+    rwa-geographical-exposure: US
+    rwa-vault-closure: Upon governance request
   TELEPORT-FW-A:
     <<: *BASE
     <<: *STATUS_ACTIVE
