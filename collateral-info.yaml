@@ -215,6 +215,9 @@ collateral-defs:
     collateral-shortname: 6s Capital
     collateral-symbol: RWA001
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/6s
+    collateral-stability-fee-type: Fixed
+    collateral-stability-fee-payment-frequency: Per second
+    collateral-geographical-exposure: US
 
   RWA002: &RWA002
     <<: *CFG-DROP
@@ -223,6 +226,9 @@ collateral-defs:
     collateral-shortname: New Silver DROP
     collateral-symbol: NS-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/new-silver
+    collateral-stability-fee-type: Fixed
+    collateral-stability-fee-payment-frequency: Per second
+    collateral-geographical-exposure: US
 
   RWA003: &RWA003
     <<: *CFG-DROP
@@ -231,6 +237,9 @@ collateral-defs:
     collateral-shortname: ConsolFreight DROP
     collateral-symbol: CF-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/consolfreight
+    collateral-stability-fee-type: Fixed
+    collateral-stability-fee-payment-frequency: Per second
+    collateral-geographical-exposure: US
 
   RWA004: &RWA004
     <<: *CFG-DROP
@@ -239,6 +248,9 @@ collateral-defs:
     collateral-shortname: Harbour Trade Credit DROP
     collateral-symbol: HTC-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/harbour-trade
+    collateral-stability-fee-type: Fixed
+    collateral-stability-fee-payment-frequency: Per second
+    collateral-geographical-exposure: US
 
   RWA005: &RWA005
     <<: *CFG-DROP
@@ -247,6 +259,9 @@ collateral-defs:
     collateral-shortname: FortunaFi DROP
     collateral-symbol: FFT1-DROP
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/fortunafi
+    collateral-stability-fee-type: Fixed
+    collateral-stability-fee-payment-frequency: Per second
+    collateral-geographical-exposure: US
 
   RWA007: &RWA007
     <<: *RWA-CUSTOM
@@ -254,13 +269,21 @@ collateral-defs:
     collateral-longname: Monetalis Clydesdale
     collateral-shortname: Monetalis Clydesdale
     collateral-symbol: RWA007
+    collateral-stability-fee-type: Variable
+    collateral-stability-fee-payment-frequency: One-time
+    collateral-geographical-exposure: US
+    vault-closure: Upon governance request
 
   RWA008: &RWA008
     <<: *RWA-CUSTOM
-    collateral-desc: TODO
+    collateral-desc: Covered bonds under French Law backed by home loans and benefiting from a statutory privilege, issued by Societe Generale SFH (SG SFH)
     collateral-longname: Societe Generale
     collateral-shortname: Societe Generale
     collateral-symbol: RWA008
+    collateral-stability-fee-type: Fixed
+    collateral-stability-fee-payment-frequency: Per second
+    collateral-geographical-exposure: FR
+    vault-closure: Latest 05/14/2025 
 
   RWA009: &RWA009
     <<: *RWA-CUSTOM
@@ -269,6 +292,10 @@ collateral-defs:
     collateral-shortname: H. V. Bank
     collateral-symbol: RWA009
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/hvbank
+    collateral-stability-fee-type: Variable
+    collateral-stability-fee-payment-frequency: Monthly
+    collateral-geographical-exposure: US
+    vault-closure: Upon governance request
 
 status-defs:
   Deprecated: &STATUS_DEPRECATED
