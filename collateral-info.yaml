@@ -99,6 +99,13 @@ collateral-defs:
     collateral-shortname: Wrapped Lido Staked Ether
     collateral-symbol: WSTETH
     collateral-info-url: https://lido.fi/ethereum
+    
+  RETH: &RETH
+    <<: *ONCHAIN
+    collateral-desc: Rocket Pool Ether is a fungible derivative of Ether that is exposed to the yield earned by validators on the Ethereum network. It is managed by the Rocket Pool DAO. 
+    collateral-shortname: Rocket Pool Ether
+    collateral-symbol: RETH
+    collateral-info-url: https://rocketpool.net/
 
   USDC: &USDC
     <<: *CUSTODIAL-ONCHAIN
@@ -208,6 +215,14 @@ collateral-defs:
     collateral-symbol: aDAI
     is-stablecoin: true
     collateral-info-url: https://aave.com/
+    
+  CDAI: &CDAI
+    <<: *SIMPLE-ONCHAIN
+    collateral-desc: These tokens are a receipt-like token that represents DAI deposited in the CompoundV2 protocol. These tokens accrue value over time from over-collateralized loans made to users of the Compound Protocol.
+    collateral-shortname: Compound DAI
+    collateral-symbol: cDAI
+    is-stablecoin: true
+    collateral-info-url: https://compound.finance/
 
   RWA001: &RWA001
     <<: *RWA-CUSTOM
@@ -441,6 +456,13 @@ ilks:
     id: RWA006-A
     shortname: P1-DROP
     longname: Peoples Company DROP
+  RENBTC-A:
+    <<: *BASE
+    <<: *RENBTC
+    <<: *STATUS_DEPRECATED
+    id: RENBTC-A
+    shortname: renBTC
+    longname: renBTC
     
 # ACTIVE
   ETH-A: 
@@ -499,6 +521,13 @@ ilks:
     id: WSTETH-B
     shortname: stETH Low Fee
     longname: Lido wstETH High-Ratio Low-Fee
+  RETH-A:
+    <<: *BASE
+    <<: *RETH
+    <<: *STATUS_ACTIVE
+    id: RETH-A
+    shortname: RETH
+    longname: Rocket Pool ETH (RETH)
   PSM-USDC-A:
     <<: *BASE
     <<: *USDC
@@ -551,13 +580,6 @@ ilks:
     id: MATIC-A
     shortname: MATIC
     longname: Polygon (MATIC)
-  RENBTC-A:
-    <<: *BASE
-    <<: *RENBTC
-    <<: *STATUS_ACTIVE
-    id: RENBTC-A
-    shortname: renBTC
-    longname: renBTC
   LINK-A:
     <<: *BASE
     <<: *LINK
@@ -580,6 +602,14 @@ ilks:
     id: DIRECT-AAVEV2-DAI
     shortname: D3M (AAVE-V2)
     longname: Direct Deposit DAI Module (AAVE-V2)
+  DIRECT-COMPV2-DAI:
+    <<: *BASE
+    <<: *CDAI
+    <<: *D3M
+    <<: *STATUS_ACTIVE
+    id: DIRECT-COMPV2-DAI
+    shortname: D3M (COMPOUND-V2)
+    longname: Direct Deposit DAI Module (COMPOUND-V2)
   YFI-A:
     <<: *BASE
     <<: *YFI
