@@ -608,7 +608,7 @@ ilks:
     <<: *D3M
     <<: *STATUS_ACTIVE
     id: DIRECT-COMPV2-DAI
-    shortname: D3M (COMPOUND-V2)
+    shortname: D3M (COMP-V2)
     longname: Direct Deposit DAI Module (COMPOUND-V2)
   YFI-A:
     <<: *BASE
