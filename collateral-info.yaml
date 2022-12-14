@@ -226,7 +226,7 @@ collateral-defs:
   
   GNO: &GNO
     <<: *SIMPLE-ONCHAIN
-    collateral-desc: GNO is the staking token of Gnosis chain and the governance token for the GnosisDAO
+    collateral-desc: GNO is the staking token of Gnosis chain and the governance token for the GnosisDAO.
     collateral-shortname: Gnosis DAO
     collateral-symbol: GNO
     collateral-info-url: https://www.gnosis.io/
