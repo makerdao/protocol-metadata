@@ -223,6 +223,13 @@ collateral-defs:
     collateral-symbol: cDAI
     is-stablecoin: true
     collateral-info-url: https://compound.finance/
+  
+  GNO: &GNO
+    <<: *SIMPLE-ONCHAIN
+    collateral-desc: GNO is the staking token of Gnosis chain and the governance token for the GnosisDAO
+    collateral-shortname: Gnosis DAO
+    collateral-symbol: GNO
+    collateral-info-url: https://www.gnosis.io/
 
   RWA001: &RWA001
     <<: *RWA-CUSTOM
@@ -285,6 +292,38 @@ collateral-defs:
     collateral-symbol: RWA009
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/hvbank
 
+  RWA010: &RWA010
+    <<: *CFG-DROP
+    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-longname: Centrifuge Blocktower Credit Series 1 DROP Token
+    collateral-shortname: BlockTower Series 1 DROP
+    collateral-symbol: BBT1DRP
+    collateral-info-url: 
+
+  RWA011: &RWA011
+    <<: *CFG-DROP
+    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-longname: Centrifuge Blocktower Credit Series 2 DROP Token
+    collateral-shortname: BlockTower Series 2 DROP
+    collateral-symbol: BBT2DRP
+    collateral-info-url: 
+ 
+  RWA012: &RWA012
+    <<: *CFG-DROP
+    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-longname: Centrifuge Blocktower Credit Series 3 DROP Token
+    collateral-shortname: BlockTower Series 3 DROP
+    collateral-symbol: BBT3DRP
+    collateral-info-url: 
+ 
+  RWA013: &RWA013
+    <<: *CFG-DROP
+    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-longname: Centrifuge Blocktower Credit Series 4 DROP Token
+    collateral-shortname: BlockTower Series 4 DROP
+    collateral-symbol: BBT4DRP
+    collateral-info-url: 
+    
 status-defs:
   Deprecated: &STATUS_DEPRECATED
     status: Deprecated
@@ -631,6 +670,13 @@ ilks:
     id: UNIV2USDCETH-A
     shortname: UniV2 USDC/ETH
     longname: UniswapV2 USDC/ETH
+  GNO-A:
+    <<: *BASE
+    <<: *GNO
+    <<: *STATUS_ACTIVE
+    id: GNO-A
+    shortname: GNO
+    longname: Gnosis DAO
   RWA001-A:
     <<: *BASE
     <<: *RWA001
@@ -713,6 +759,46 @@ ilks:
     rwa-stability-fee-payment-frequency: Monthly
     rwa-geographical-exposure: US
     rwa-vault-closure: Upon governance request
+  RWA010-A:
+    <<: *BASE
+    <<: *RWA010
+    <<: *STATUS_ACTIVE
+    id: RWA010-A
+    shortname: BBT1DRP
+    longname: BlockTower Series 1 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
+  RWA011-A:
+    <<: *BASE
+    <<: *RWA011
+    <<: *STATUS_ACTIVE
+    id: RWA011-A
+    shortname: BBT2DRP
+    longname: BlockTower Series 2 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
+  RWA012-A:
+    <<: *BASE
+    <<: *RWA012
+    <<: *STATUS_ACTIVE
+    id: RWA012-A
+    shortname: BBT3DRP
+    longname: BlockTower Series 3 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
+  RWA013-A:
+    <<: *BASE
+    <<: *RWA013
+    <<: *STATUS_ACTIVE
+    id: RWA013-A
+    shortname: BBT4DRP
+    longname: BlockTower Series 4 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
   TELEPORT-FW-A:
     <<: *BASE
     <<: *STATUS_ACTIVE
