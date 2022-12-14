@@ -1,0 +1,429 @@
+parameters:
+  MCD_PAUSE.delay:
+    longname: Governance Pause Delay
+    shortname: GSM Delay
+    contract: MCD_PAUSE
+    parameter: delay
+    desc: The minimum amount of time after an executive vote has passed that changes will come into effect in the Maker Protocol.
+    alias: ['GSM', 'Pause', 'Governance Security Delay']
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/governance-module/pause-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/core/param-gsm-pause-delay
+
+  MCD_VOW.hump:
+    longname: System Surplus Buffer
+    shortname: Surplus
+    contract: VOW
+    parameter: hump
+    desc: The maximum amount of DAI that can accrue to the protocol surplus surplus auctions being triggered. 
+    alias: ['Surplus Auction Buffer']
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/vow-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/core/param-system-surplus-buffer
+
+  MCD_POT.dsr: 
+    longname: Dai Savings Rate
+    shortname: DSR
+    contract: MCD_POT
+    parameter: dsr
+    desc: The interest rate paid to DAI holders who have deposited DAI into the Dai Savings Rate contract.
+    alias: ['DSR']
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/rates-module/pot-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/core/param-dai-savings-rate
+
+  MCD_DOG.Hole: 
+    longname: Global Liquidation Limit
+    shortname: Global Liquidation Limit
+    contract: MCD_DOG
+    parameter: Hole
+    desc: The maximum amount of DAI debt for which collateral auctions can be active at any one time.
+    alias: []
+    scope: system
+    technical-docs: 
+    governance-docs: https://manual.makerdao.com/parameter-index/core/param-global-liquidation-limit
+
+  MCD_VAT.Line: 
+    longname: Global Debt Ceiling
+    shortname: Global Debt Ceiling
+    contract: MCD_VAT
+    parameter: Line
+    desc: The maximum total amount of DAI that can be minted by the combined users of the Maker Protocol.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/vat-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/core/param-global-debt-ceiling
+
+  MCD_JUG.ilks[$ILK].duty:
+    longname: Stability Fees
+    shortname: Stability Fee
+    contract: MCD_JUG
+    parameter: duty
+    desc: The annual percentage fee charged on the DAI generated on vaults of this type. 
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/rates-module/jug-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-stability-fee
+
+  MCD_VAT.ilks[$ILK].line:
+    longname: Debt Ceiling
+    shortname: Line
+    contract: MCD_VAT
+    parameter: line
+    desc: The maxmimum total amount of DAI that can be minted using a specific vault type across all users of that vault type.
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/vat-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-debt-ceiling
+
+  MCD_SPOT.ilks[$ILK].mat:
+    longname: Liquidation Ratio
+    shortname: Liquidation Ratio
+    contract: MCD_SPOT
+    parameter: mat
+    desc: The maximum amount of DAI debt that a vault user can draw from their vault given the value of the collateral locked in that vault.
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/spot-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-liquidation-ratio
+
+  MCD_DOG.ilks[$ILK].chop:
+    longname: Liquidation Penalty
+    shortname: Liquidation Penalty
+    contract: MCD_DOG
+    parameter: chop
+    desc: The fee applied to a vault's debt when it is liquidated due to insufficient collateral.
+    alias: []
+    scope: ilk
+    technical-docs: 
+    governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-liquidation-penalty
+
+  MCD_VAT.ilks[$ILK].dust:
+    longname: Debt Floor
+    shortname: Dust
+    contract: MCD_VAT
+    parameter: dust
+    desc: The minimum amount of DAI that can be minted using a specific vault type for an individual vault.
+    alias: ['Dust', 'Minimum Debt']
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/core-module/vat-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-debt-floor
+
+  MIP21_LIQUIDATION_ORACLE.ilks[$ILK].doc:
+    longname: RWA Agreement
+    shortname: RWA Agreement
+    contract: MIP21_LIQUIDATION_ORACLE
+    parameter: doc
+    desc: The IPFS hash that links to the contract documentation of this RWA vault.
+    alias: []
+    scope: ilk (rwa)
+    technical-docs: https://mips.makerdao.com/mips/details/MIP21
+    governance-docs: https://manual.makerdao.com/parameter-index/vault-risk/param-rwa-agreement
+
+  MCD_CLIP_$ILK.calc:
+    longname: Auction Price Function
+    shortname: Auction Price Function
+    contract: MCD_CLIP_$ILK
+    parameter: calc
+    desc: The mathematical function that determines how the collateral price changes over time during a collateral auction.
+    alias: ['Price Curve']
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-auction-price-function
+    
+  MCD_CLIP_$ILK.buf:
+    longname: Auction Price Multiplier
+    shortname: Auction Price Multiplier
+    contract: MCD_CLIP_$ILK
+    parameter: buf
+    desc: A multiplier applied to the starting price of a collateral auction.
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-auction-price-multiplier
+
+  MCD_DOG.ilks[$ILK].hole:
+    longname: Local Liquidation Limit
+    shortname: Local Liquidation Limit
+    contract: MCD_DOG
+    parameter: hole
+    desc: The maximum amount of DAI debt for which collateral auctions can be active at any one time for this vault type.
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-local-liquidation-limit
+
+  MCD_CLIP_$ILK.cusp:
+    longname: Max Auction Drawdown
+    shortname: Max Auction Drawdown
+    contract: MCD_CLIP_$ILK
+    parameter: cusp
+    desc: The maximum percentage drop in collateral auction price during a collateral auction before the auction is reset. 
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-max-auction-drawdown
+
+  MCD_CLIP_$ILK.tail:
+    longname: Max Auction Duration
+    shortname: Max Auction Duration
+    contract: MCD_CLIP_$ILK
+    parameter: tail
+    desc: The maximum time that can elapse before an auction is reset for this vault type.
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-max-auction-duration
+
+  CLIPPER_MOM.tolerance[$CLIPPER]:
+    longname: Breaker Price Tolerance
+    shortname: Breaker Price Tolerance
+    contract: CLIPPER_MOM
+    parameter: tolerance
+    desc: The minimum relative permitted remaining value per price update for this clipper.
+    alias: []
+    scope: ilk
+    technical-docs: 
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-breaker-price-tolerance#description
+
+  MCD_CLIP_$ILK.chip:
+    longname: Proportional Kick Incentive
+    shortname: Proportional Kick Incentive
+    contract: MCD_CLIP_$ILK
+    parameter: chip
+    desc: The proportion of debt in DAI paid to the keeper triggering a collateral auction for a given vault of this type.
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-proportional-kick-incentive
+
+  MCD_CLIP_$ILK.tip:
+    longname: Flat Kick Incentive
+    shortname: Flat Kick Incentive
+    contract: MCD_CLIP_$ILK
+    parameter: tip
+    desc: The amount of DAI paid to the keeper triggering a collateral auction for a given vault of this type.
+    alias: []
+    scope: ilk
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/dog-and-clipper-detailed-documentation#setting-hole-or-ilk.hole-too-high
+    governance-docs: https://manual.makerdao.com/parameter-index/collateral-auction/param-flat-kick-incentive
+
+  MCD_VOW.bump:
+    longname: Surplus Auction Lot Size
+    shortname: Surplus Lot Size
+    contract: MCD_VOW
+    parameter: bump
+    desc: The amount of DAI that is requested in each surplus auction.
+    alias: ['Surplus Auction Lot Size']
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/vow-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/surplus-auction/param-surplus-lot-size
+
+  MCD_FLAP.beg:
+    longname: Surplus Auction Minimum Bid Increase
+    shortname: Surplus Min Bid Increase
+    contract: MCD_FLAP
+    parameter: beg
+    desc: Minimum percentage increase for the next bid in a surplus auction.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flap-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/surplus-auction/param-min-bid-increase-flap
+
+  MCD_FLAP.tau:
+    longname: Surplus Auction Duration
+    shortname: Surplus Auction Duration
+    contract: MCD_FLAP
+    parameter: tau
+    desc: The maximum lifetime of a Surplus Auction.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flap-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/surplus-auction/param-auction-duration-flap
+
+  MCD_FLAP.ttl:
+    longname: Surplus Auction Bid Duration
+    shortname: Surplus Auction Bid Duration
+    contract: MCD_FLAP
+    parameter: ttl
+    desc: The amount of time to wait after a successful bid before ending a Surplus Auction.
+    alias: []
+    scope: sysyem
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flap-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/surplus-auction/param-bid-duration-flap
+
+  MCD_FLAP.lid:
+    longname: Surplus Auction Limit
+    shortname: Surplus Auction Limit
+    contract: MCD_FLAP
+    parameter: lid
+    desc: The maximum amount of DAI that can be auctioned in surplus auctions at any given time.
+    alias: []
+    scope: system
+    technical-docs: 
+    governance-docs: https://manual.makerdao.com/parameter-index/surplus-auction/param-surplus-auction-limit
+
+  MCD_FLOP.beg:
+    longname: Debt Auction Minimum Bid Decrease
+    shortname: Debt Min Bid Decrease
+    contract: MCD_FLOP
+    parameter: beg
+    desc: Minimum percentage decrease for the next bid in a debt auction.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flop-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-min-bid-decrease-flop
+
+  MCD_FLOP.tau:
+    longname: Debt Auction Duration
+    shortname: Debt Auction Duration
+    contract: MCD_FLOP
+    parameter: tau
+    desc: The maximum lifetime of a Debt Auction.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flop-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-auction-duration-flop
+
+  MCD_FLOP.ttl:
+    longname: Debt Auction Bid Duration
+    shortname: Debt Auction Bid Duration
+    contract: MCD_FLOP
+    parameter: ttl
+    desc: The amount of time to wait after a successful bid before ending a Debt Auction.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flop-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-bid-duration-flop
+
+  MCD_VOW.wait:
+    longname: Debt Auction Delay
+    shortname: Debt Auction Delay
+    contract: MCD_VOW
+    parameter: wait
+    desc: The amount of time that must pass after a Vault has been liquidated before any corresponding debt is marked as bad debt.
+    alias: ['Flop Delay']
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/vow-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-debt-auction-delay
+
+  MCD_VOW.sump:
+    longname: Debt Auction Bid Size
+    shortname: Debt Auction Bid Size
+    contract: MCD_VOW
+    parameter: sump
+    desc: The amount of DAI debt that is auctioned off in each Debt Auction.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/vow-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-bid-size
+
+  MCD_VOW.dump:
+    longname: Debt Auction Initial Lot Size
+    shortname: Debt Auction Initial Lot Size
+    contract: MCD_VOW
+    parameter: dump
+    desc: The starting amount of MKR requested in each Debt Auction.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/vow-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-initial-lot-size
+
+  MCD_FLOP.pad:
+    longname: Debt Auction Lot Size Increase
+    shortname: Debt Auction Lot Size Increase
+    contract: MCD_FLOP
+    parameter: pad
+    desc: The increase to the initial MKR lot size requested in each Debt Auction if the Debt Auction restarts due to timeout.
+    alias: []
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/system-stabilizer-module/flop-detailed-documentation
+    governance-docs: https://manual.makerdao.com/parameter-index/debt-auction/param-lot-size-increase
+
+  MCD_PSM_$ILK.tin:
+    longname: Fee In
+    shortname: Fee In
+    contract: MCD_PSM_$ILK
+    parameter: tin
+    desc: The percentage fee applied when trading the collateral asset into the PSM in exchange for DAI.
+    alias: ['Toll In']
+    scope: psm
+    technical-docs: https://mips.makerdao.com/mips/details/MIP29
+    governance-docs: https://manual.makerdao.com/module-index/module-psm
+
+  MCD_PSM_$ILK.tout:
+    longname: Fee Out
+    shortname: Fee Out
+    contract: MCD_PSM_$ILK
+    parameter: tin
+    desc: The percentage fee applied when trading DAI into the PSM in exchange for the collateral asset.
+    alias: ['Toll Out']
+    scope: psm
+    technical-docs: https://mips.makerdao.com/mips/details/MIP29
+    governance-docs: https://manual.makerdao.com/module-index/module-psm
+  
+  MCD_IAM_AUTO_LINE.ilks[$ILK].line:
+    longname: Maximum Debt Ceiling
+    shortname: Maximum Debt Ceiling
+    contract: MCD_IAM_AUTO_LINE
+    parameter: line
+    desc: The maximum value for Debt Ceiling that the DC-IAM will allow in the given vault type.
+    alias: []
+    scope: ilk
+    technical-docs: https://mips.makerdao.com/mips/details/MIP27
+    governance-docs: https://manual.makerdao.com/module-index/module-dciam
+
+  MCD_IAM_AUTO_LINE.ilks[$ILK].gap:
+    longname: Target Available Debt
+    shortname: Target Available Debt
+    contract: MCD_IAM_AUTO_LINE
+    parameter: gap
+    desc: The target difference between the current debt usage and the Debt Ceiling of the vault type.
+    alias: []
+    scope: ilk
+    technical-docs: https://mips.makerdao.com/mips/details/MIP27
+    governance-docs: https://manual.makerdao.com/module-index/module-dciam
+
+  MCD_IAM_AUTO_LINE.ilks[$ILK].ttl:
+    longname: Ceiling Increase Cooldown
+    shortname: Ceiling Increase Cooldown
+    contract: MCD_IAM_AUTO_LINE
+    parameter: ttl
+    desc: How frequently the Debt Ceiling can be increased by the DC-IAM.
+    alias: []
+    scope: ilk
+    technical-docs: https://mips.makerdao.com/mips/details/MIP27
+    governance-docs: https://manual.makerdao.com/module-index/module-dciam
+
+  MCD_JOIN_DIRECT_AAVEV2_DAI.bar:
+    longname: Target Borrow Rate
+    shortname: Target Borrow Rate
+    contract: MCD_JOIN_DIRECT_AAVEV2_DAI
+    parameter: bar
+    desc: The interest rate that must be exceeded on the target protocol in order for DAI to be minted into the D3M.
+    alias: []
+    scope: d3m
+    technical-docs: https://mips.makerdao.com/mips/details/MIP50
+    governance-docs: https://manual.makerdao.com/module-index/module-dai-direct-deposit
+
+  MCD_FLASH.max:
+    longname: Flash Loan Debt Ceiling
+    shortname: Flash Loan Debt Ceiling
+    contract: MCD_FLASH
+    parameter: max
+    desc: The maximum amount of flash loaned DAI that a user can mint in a single transaction.
+    alias: []
+    scope: system
+    technical-docs: https://mips.makerdao.com/mips/details/MIP25
+    governance-docs: https://manual.makerdao.com/module-index/module-flash-mint-module
+
+  MCD_ESM.min:
+    longname: Minimum Threshold
+    shortname: Minimum Threshold
+    contract: MCD_ESM
+    parameter: min
+    desc: The minimum amount of MKR that must be deposited into the Emergency Shutdown Module before emergency shutdown may be triggered.
+    alias: ['ESM Threshold']
+    scope: system
+    technical-docs: https://docs.makerdao.com/smart-contract-modules/shutdown/emergency-shutdown-module
+    governance-docs: https://manual.makerdao.com/module-index/module-emergency-shutdown
