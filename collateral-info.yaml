@@ -294,34 +294,34 @@ collateral-defs:
 
   RWA010: &RWA010
     <<: *CFG-DROP
-    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-desc: Whole loans or receivables purchases.
     collateral-longname: Centrifuge Blocktower Credit Series 1 DROP Token
-    collateral-shortname: BlockTower Series 1 DROP
-    collateral-symbol: BBT1DRP
+    collateral-shortname: BlockTower S1 DROP
+    collateral-symbol: BBT1-DROP
     collateral-info-url: 
 
   RWA011: &RWA011
     <<: *CFG-DROP
-    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-desc: Senior-secured asset-backed Facilities.
     collateral-longname: Centrifuge Blocktower Credit Series 2 DROP Token
-    collateral-shortname: BlockTower Series 2 DROP
-    collateral-symbol: BBT2DRP
+    collateral-shortname: BlockTower S2 DROP
+    collateral-symbol: BBT2-DROP
     collateral-info-url: 
  
   RWA012: &RWA012
     <<: *CFG-DROP
-    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-desc: Investment Grade Structured Credit Products (ABS bonds).
     collateral-longname: Centrifuge Blocktower Credit Series 3 DROP Token
-    collateral-shortname: BlockTower Series 3 DROP
-    collateral-symbol: BBT3DRP
+    collateral-shortname: BlockTower S3 DROP
+    collateral-symbol: BBT3-DROP
     collateral-info-url: 
  
   RWA013: &RWA013
     <<: *CFG-DROP
-    collateral-desc: Revolving Credit Facility formed of the following collateral types: Senior Secured Facilities, Forward-Flow Arrangements, Whole loans or receivables purchases, Investment Grade Structured Credit Products (ABS bonds).
+    collateral-desc: Investment Grade Structured Credit Products (ABS bonds).
     collateral-longname: Centrifuge Blocktower Credit Series 4 DROP Token
-    collateral-shortname: BlockTower Series 4 DROP
-    collateral-symbol: BBT4DRP
+    collateral-shortname: BlockTower S4 DROP
+    collateral-symbol: BBT4-DROP
     collateral-info-url: 
     
 status-defs:
@@ -764,7 +764,7 @@ ilks:
     <<: *RWA010
     <<: *STATUS_ACTIVE
     id: RWA010-A
-    shortname: BBT1DRP
+    shortname: BBT1-DROP
     longname: BlockTower Series 1 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -774,7 +774,7 @@ ilks:
     <<: *RWA011
     <<: *STATUS_ACTIVE
     id: RWA011-A
-    shortname: BBT2DRP
+    shortname: BBT2-DROP
     longname: BlockTower Series 2 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -784,7 +784,7 @@ ilks:
     <<: *RWA012
     <<: *STATUS_ACTIVE
     id: RWA012-A
-    shortname: BBT3DRP
+    shortname: BBT3-DROP
     longname: BlockTower Series 3 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -794,7 +794,7 @@ ilks:
     <<: *RWA013
     <<: *STATUS_ACTIVE
     id: RWA013-A
-    shortname: BBT4DRP
+    shortname: BBT4-DROP
     longname: BlockTower Series 4 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
