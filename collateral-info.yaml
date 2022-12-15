@@ -223,6 +223,13 @@ collateral-defs:
     collateral-symbol: cDAI
     is-stablecoin: true
     collateral-info-url: https://compound.finance/
+  
+  GNO: &GNO
+    <<: *SIMPLE-ONCHAIN
+    collateral-desc: GNO is the staking token of Gnosis chain and the governance token for the GnosisDAO.
+    collateral-shortname: Gnosis DAO
+    collateral-symbol: GNO
+    collateral-info-url: https://www.gnosis.io/
 
   RWA001: &RWA001
     <<: *RWA-CUSTOM
@@ -285,6 +292,38 @@ collateral-defs:
     collateral-symbol: RWA009
     collateral-info-url: https://manual.makerdao.com/collateral/real-world-assets-in-detail/hvbank
 
+  RWA010: &RWA010
+    <<: *CFG-DROP
+    collateral-desc: Whole loans or receivables purchases.
+    collateral-longname: Centrifuge Blocktower Credit Series 1 DROP Token
+    collateral-shortname: BlockTower S1 DROP
+    collateral-symbol: BBT1-DROP
+    collateral-info-url: 
+
+  RWA011: &RWA011
+    <<: *CFG-DROP
+    collateral-desc: Senior-secured asset-backed Facilities.
+    collateral-longname: Centrifuge Blocktower Credit Series 2 DROP Token
+    collateral-shortname: BlockTower S2 DROP
+    collateral-symbol: BBT2-DROP
+    collateral-info-url: 
+ 
+  RWA012: &RWA012
+    <<: *CFG-DROP
+    collateral-desc: Investment Grade Structured Credit Products (ABS bonds).
+    collateral-longname: Centrifuge Blocktower Credit Series 3 DROP Token
+    collateral-shortname: BlockTower S3 DROP
+    collateral-symbol: BBT3-DROP
+    collateral-info-url: 
+ 
+  RWA013: &RWA013
+    <<: *CFG-DROP
+    collateral-desc: Investment Grade Structured Credit Products (ABS bonds).
+    collateral-longname: Centrifuge Blocktower Credit Series 4 DROP Token
+    collateral-shortname: BlockTower S4 DROP
+    collateral-symbol: BBT4-DROP
+    collateral-info-url: 
+    
 status-defs:
   Deprecated: &STATUS_DEPRECATED
     status: Deprecated
@@ -631,6 +670,13 @@ ilks:
     id: UNIV2USDCETH-A
     shortname: UniV2 USDC/ETH
     longname: UniswapV2 USDC/ETH
+  GNO-A:
+    <<: *BASE
+    <<: *GNO
+    <<: *STATUS_ACTIVE
+    id: GNO-A
+    shortname: GNO
+    longname: Gnosis DAO
   RWA001-A:
     <<: *BASE
     <<: *RWA001
@@ -713,6 +759,46 @@ ilks:
     rwa-stability-fee-payment-frequency: Monthly
     rwa-geographical-exposure: US
     rwa-vault-closure: Upon governance request
+  RWA010-A:
+    <<: *BASE
+    <<: *RWA010
+    <<: *STATUS_ACTIVE
+    id: RWA010-A
+    shortname: BBT1-DROP
+    longname: BlockTower Series 1 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
+  RWA011-A:
+    <<: *BASE
+    <<: *RWA011
+    <<: *STATUS_ACTIVE
+    id: RWA011-A
+    shortname: BBT2-DROP
+    longname: BlockTower Series 2 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
+  RWA012-A:
+    <<: *BASE
+    <<: *RWA012
+    <<: *STATUS_ACTIVE
+    id: RWA012-A
+    shortname: BBT3-DROP
+    longname: BlockTower Series 3 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
+  RWA013-A:
+    <<: *BASE
+    <<: *RWA013
+    <<: *STATUS_ACTIVE
+    id: RWA013-A
+    shortname: BBT4-DROP
+    longname: BlockTower Series 4 DROP
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: US, CA
   TELEPORT-FW-A:
     <<: *BASE
     <<: *STATUS_ACTIVE
