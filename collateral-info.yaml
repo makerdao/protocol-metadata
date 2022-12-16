@@ -297,7 +297,7 @@ collateral-defs:
     collateral-desc: Whole loans or receivables purchases.
     collateral-longname: Centrifuge Blocktower Credit Series 1 DROP Token
     collateral-shortname: BlockTower S1 DROP
-    collateral-symbol: BBT1-DROP
+    collateral-symbol: RWA0010
     collateral-info-url: 
 
   RWA011: &RWA011
@@ -305,7 +305,7 @@ collateral-defs:
     collateral-desc: Senior-secured asset-backed Facilities.
     collateral-longname: Centrifuge Blocktower Credit Series 2 DROP Token
     collateral-shortname: BlockTower S2 DROP
-    collateral-symbol: BBT2-DROP
+    collateral-symbol: RWA0011
     collateral-info-url: 
  
   RWA012: &RWA012
@@ -313,7 +313,7 @@ collateral-defs:
     collateral-desc: Investment Grade Structured Credit Products (ABS bonds).
     collateral-longname: Centrifuge Blocktower Credit Series 3 DROP Token
     collateral-shortname: BlockTower S3 DROP
-    collateral-symbol: BBT3-DROP
+    collateral-symbol: RWA0012
     collateral-info-url: 
  
   RWA013: &RWA013
@@ -321,7 +321,7 @@ collateral-defs:
     collateral-desc: Investment Grade Structured Credit Products (ABS bonds).
     collateral-longname: Centrifuge Blocktower Credit Series 4 DROP Token
     collateral-shortname: BlockTower S4 DROP
-    collateral-symbol: BBT4-DROP
+    collateral-symbol: RWA0013
     collateral-info-url: 
     
 status-defs:
@@ -691,7 +691,7 @@ ilks:
     <<: *RWA002
     <<: *STATUS_ACTIVE
     id: RWA002-A
-    shortname: NS-DROP
+    shortname: New Silver
     longname: New Silver DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -701,7 +701,7 @@ ilks:
     <<: *RWA003
     <<: *STATUS_ACTIVE
     id: RWA003-A
-    shortname: CF-DROP
+    shortname: ConsolFreight
     longname: ConsolFreight DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -711,7 +711,7 @@ ilks:
     <<: *RWA004
     <<: *STATUS_ACTIVE
     id: RWA004-A
-    shortname: HTC-DROP
+    shortname: Harbor Trade Credit
     longname: Harbor Trade Credit DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -721,7 +721,7 @@ ilks:
     <<: *RWA005
     <<: *STATUS_ACTIVE
     id: RWA005-A
-    shortname: FFT1-DROP
+    shortname: Fortunafi
     longname: Fortunafi DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -764,7 +764,7 @@ ilks:
     <<: *RWA010
     <<: *STATUS_ACTIVE
     id: RWA010-A
-    shortname: BBT1-DROP
+    shortname: BlockTower S1
     longname: BlockTower Series 1 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -774,7 +774,7 @@ ilks:
     <<: *RWA011
     <<: *STATUS_ACTIVE
     id: RWA011-A
-    shortname: BBT2-DROP
+    shortname: BlockTower S2
     longname: BlockTower Series 2 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -784,7 +784,7 @@ ilks:
     <<: *RWA012
     <<: *STATUS_ACTIVE
     id: RWA012-A
-    shortname: BBT3-DROP
+    shortname: BlockTower S3
     longname: BlockTower Series 3 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
@@ -794,7 +794,7 @@ ilks:
     <<: *RWA013
     <<: *STATUS_ACTIVE
     id: RWA013-A
-    shortname: BBT4-DROP
+    shortname: BlockTower S4
     longname: BlockTower Series 4 DROP
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
