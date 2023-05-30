@@ -216,6 +216,14 @@ collateral-defs:
     is-stablecoin: true
     collateral-info-url: https://aave.com/
     
+  SPDAI: &SPDAI
+    <<: *SIMPLE-ONCHAIN
+    collateral-desc: These tokens are a receipt-like token that represents DAI deposited in Spark protocol. These tokens accrue value over time from over-collateralized loans made to users of Spark Protocol.
+    collateral-shortname: Spark DAI
+    collateral-symbol: spDAI
+    is-stablecoin: true
+    collateral-info-url: https://www.sparkprotocol.io/
+    
   CDAI: &CDAI
     <<: *SIMPLE-ONCHAIN
     collateral-desc: These tokens are a receipt-like token that represents DAI deposited in the CompoundV2 protocol. These tokens accrue value over time from over-collateralized loans made to users of the Compound Protocol.
@@ -323,6 +331,14 @@ collateral-defs:
     collateral-shortname: BlockTower S4 DROP
     collateral-symbol: RWA0013
     collateral-info-url: 
+    
+  RWA014: &RWA014
+    <<: *RWA
+    collateral-desc: USDC held with Coinbase Custody. USDC is a fiat backed U.S. Dollar stablecoin operated by Circle. Each USDC is backed by 1 dollar worth of cash and short-dated U.S treasuries. USDC is redeemable for dollars and the backing is audited monthly. 
+    collateral-longname: Coinbase Custody U.S. Dollar Coin (Circle)
+    collateral-shortname: Coinbase Custody USDC
+    collateral-symbol: RWA014
+    collateral-info-url: https://www.coinbase.com/
     
 status-defs:
   Deprecated: &STATUS_DEPRECATED
@@ -502,6 +518,59 @@ ilks:
     id: RENBTC-A
     shortname: renBTC
     longname: renBTC
+  MANA-A:
+    <<: *BASE
+    <<: *MANA
+    <<: *STATUS_DEPRECATED
+    id: MANA-A
+    shortname: MANA 
+    longname: Decentraland (MANA)
+  MATIC-A:
+    <<: *BASE
+    <<: *MATIC
+    <<: *STATUS_DEPRECATED
+    id: MATIC-A
+    shortname: MATIC
+    longname: Polygon (MATIC)
+  LINK-A:
+    <<: *BASE
+    <<: *LINK
+    <<: *STATUS_DEPRECATED
+    id: LINK-A
+    shortname: LINK
+    longname: Chainlink (LINK)
+  YFI-A:
+    <<: *BASE
+    <<: *YFI
+    <<: *STATUS_DEPRECATED
+    id: YFI-A
+    shortname: YFI
+    longname: Yearn Finance (YFI)
+  UNIV2USDCETH-A:
+    <<: *BASE
+    <<: *UNIV2USDCETH
+    <<: *STATUS_DEPRECATED
+    id: UNIV2USDCETH-A
+    shortname: UniV2 USDC/ETH
+    longname: UniswapV2 USDC/ETH
+  GNO-A:
+    <<: *BASE
+    <<: *GNO
+    <<: *STATUS_DEPRECATED
+    id: GNO-A
+    shortname: GNO
+    longname: Gnosis DAO
+  RWA008-A:
+    <<: *BASE
+    <<: *RWA008
+    <<: *STATUS_DEPRECATED
+    id: RWA008-A
+    shortname: Societe Generale
+    longname: Societe Generale
+    rwa-stability-fee-type: Fixed
+    rwa-stability-fee-payment-frequency: Per second
+    rwa-geographical-exposure: FR
+    rwa-vault-closure: Latest 2025-05-14
     
 # ACTIVE
   ETH-A: 
@@ -605,27 +674,6 @@ ilks:
     id: GUNIV3DAIUSDC2-A
     shortname: GUNI-DAI/USDC 0.01%
     longname: Gelato Uniswap V3 DAI/USDC 0.01% Pool
-  MANA-A:
-    <<: *BASE
-    <<: *MANA
-    <<: *STATUS_ACTIVE
-    id: MANA-A
-    shortname: MANA 
-    longname: Decentraland (MANA)
-  MATIC-A:
-    <<: *BASE
-    <<: *MATIC
-    <<: *STATUS_ACTIVE
-    id: MATIC-A
-    shortname: MATIC
-    longname: Polygon (MATIC)
-  LINK-A:
-    <<: *BASE
-    <<: *LINK
-    <<: *STATUS_ACTIVE
-    id: LINK-A
-    shortname: LINK
-    longname: Chainlink (LINK)
   CRVV1ETHSTETH-A:
     <<: *BASE
     <<: *CurveSTETHETH
@@ -649,13 +697,14 @@ ilks:
     id: DIRECT-COMPV2-DAI
     shortname: D3M (COMP-V2)
     longname: Direct Deposit DAI Module (COMPOUND-V2)
-  YFI-A:
+  DIRECT-SPARK-DAI:
     <<: *BASE
-    <<: *YFI
+    <<: *SPDAI
+    <<: *D3M
     <<: *STATUS_ACTIVE
-    id: YFI-A
-    shortname: YFI
-    longname: Yearn Finance (YFI)
+    id: DIRECT-SPARK-DAI
+    shortname: D3M (Spark)
+    longname: Direct Deposit DAI Module (SPARK)
   UNIV2DAIUSDC-A:
     <<: *BASE
     <<: *UNIV2DAIUSDC
@@ -663,20 +712,6 @@ ilks:
     id: UNIV2DAIUSDC-A
     shortname: UniV2 DAI/USDC
     longname: UniswapV2 DAI/USDC Minimal Ratio
-  UNIV2USDCETH-A:
-    <<: *BASE
-    <<: *UNIV2USDCETH
-    <<: *STATUS_ACTIVE
-    id: UNIV2USDCETH-A
-    shortname: UniV2 USDC/ETH
-    longname: UniswapV2 USDC/ETH
-  GNO-A:
-    <<: *BASE
-    <<: *GNO
-    <<: *STATUS_ACTIVE
-    id: GNO-A
-    shortname: GNO
-    longname: Gnosis DAO
   RWA001-A:
     <<: *BASE
     <<: *RWA001
@@ -737,17 +772,6 @@ ilks:
     rwa-stability-fee-payment-frequency: One-time
     rwa-geographical-exposure: US
     rwa-vault-closure: Upon governance request
-  RWA008-A:
-    <<: *BASE
-    <<: *RWA008
-    <<: *STATUS_ACTIVE
-    id: RWA008-A
-    shortname: Societe Generale
-    longname: Societe Generale
-    rwa-stability-fee-type: Fixed
-    rwa-stability-fee-payment-frequency: Per second
-    rwa-geographical-exposure: FR
-    rwa-vault-closure: Latest 2025-05-14
   RWA009-A:
     <<: *BASE
     <<: *RWA009
@@ -799,6 +823,13 @@ ilks:
     rwa-stability-fee-type: Fixed
     rwa-stability-fee-payment-frequency: Per second
     rwa-geographical-exposure: US, CA
+  RWA014-A:
+    <<: *BASE
+    <<: *RWA014
+    <<: *STATUS_ACTIVE
+    id: RWA014-A
+    shortname: Coinbase Custody
+    longname: Coinbase Custody USDC
   TELEPORT-FW-A:
     <<: *BASE
     <<: *STATUS_ACTIVE
