@@ -280,7 +280,7 @@ collateral-defs:
 
   RWA007: &RWA007
     <<: *RWA-CUSTOM
-    collateral-desc: Different blends of short-term bonds from ultra-short (<1 year) to short (1-3 years) maturities. Investments done through BlackRock and Baillie Gifford. Mainly invested in US Treasuries but some exposure to corporate bonds.
+    collateral-desc: Different blends of short-term bonds from ultra-short (<1 year) to short (1-3 years) maturities. Investments done through BlackRock and Baillie Gifford. Mainly invested in U.S. Treasuries but some exposure to corporate bonds.
     collateral-longname: Monetalis Clydesdale
     collateral-shortname: Monetalis Clydesdale
     collateral-symbol: RWA007
@@ -306,7 +306,7 @@ collateral-defs:
     collateral-longname: Centrifuge Blocktower Credit Series 1 DROP Token
     collateral-shortname: BlockTower S1 DROP
     collateral-symbol: RWA0010
-    collateral-info-url: 
+    collateral-info-url: https://www.blocktower.com/
 
   RWA011: &RWA011
     <<: *CFG-DROP
@@ -314,7 +314,7 @@ collateral-defs:
     collateral-longname: Centrifuge Blocktower Credit Series 2 DROP Token
     collateral-shortname: BlockTower S2 DROP
     collateral-symbol: RWA0011
-    collateral-info-url: 
+    collateral-info-url: https://www.blocktower.com/
  
   RWA012: &RWA012
     <<: *CFG-DROP
@@ -322,7 +322,7 @@ collateral-defs:
     collateral-longname: Centrifuge Blocktower Credit Series 3 DROP Token
     collateral-shortname: BlockTower S3 DROP
     collateral-symbol: RWA0012
-    collateral-info-url: 
+    collateral-info-url: https://www.blocktower.com/
  
   RWA013: &RWA013
     <<: *CFG-DROP
@@ -330,7 +330,7 @@ collateral-defs:
     collateral-longname: Centrifuge Blocktower Credit Series 4 DROP Token
     collateral-shortname: BlockTower S4 DROP
     collateral-symbol: RWA0013
-    collateral-info-url: 
+    collateral-info-url: https://www.blocktower.com/
     
   RWA014: &RWA014
     <<: *RWA
@@ -339,6 +339,14 @@ collateral-defs:
     collateral-shortname: Coinbase Custody USDC
     collateral-symbol: RWA014
     collateral-info-url: https://www.coinbase.com/
+    
+  RWA015: &RWA015
+    <<: *RWA-CUSTOM
+    collateral-desc: U.S. Treasuries evenly distributed across maturities ranging from zero to six months. Arranged and managed by BlockTower. Brokered by Celadon Financial Group. Custodied by Wedbush Securities Inc. 
+    collateral-longname: BlockTower Andromeda
+    collateral-shortname: BlockTower Andromeda
+    collateral-symbol: RWA015
+    collateral-info-url: https://www.blocktower.com/
     
 status-defs:
   Deprecated: &STATUS_DEPRECATED
@@ -830,6 +838,13 @@ ilks:
     id: RWA014-A
     shortname: Coinbase Custody
     longname: Coinbase Custody USDC
+  RWA015-A:
+    <<: *BASE
+    <<: *RWA015
+    <<: *STATUS_ACTIVE
+    id: RWA015-A
+    shortname: BlockTower Andromeda
+    longname: BlockTower Andromeda
   TELEPORT-FW-A:
     <<: *BASE
     <<: *STATUS_ACTIVE
