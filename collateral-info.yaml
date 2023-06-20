@@ -342,7 +342,7 @@ collateral-defs:
     
   RWA015: &RWA015
     <<: *RWA-CUSTOM
-    collateral-desc: U.S. Treasuries evenly distributed across maturities ranging from zero to six months. Arranged and managed by BlockTower. Brokered by Celadon Financial Group. Custodied by Wedbush Securities Inc. 
+    collateral-desc: U.S. Treasuries evenly distributed across maturities ranging from zero to six months. DAI debt is collateralized 1:1 with U.S. Treasuries, although this may vary due to change in the value of the holdings. Arranged by BlockTower. Brokered by Celadon Financial Group. Custodied by Wedbush Securities Inc. 
     collateral-longname: BlockTower Andromeda
     collateral-shortname: BlockTower Andromeda
     collateral-symbol: RWA015
@@ -845,6 +845,9 @@ ilks:
     id: RWA015-A
     shortname: BlockTower Andromeda
     longname: BlockTower Andromeda
+    rwa-stability-fee-type: Variable
+    rwa-stability-fee-payment-frequency: Quarterly
+    rwa-geographical-exposure: US
   TELEPORT-FW-A:
     <<: *BASE
     <<: *STATUS_ACTIVE
